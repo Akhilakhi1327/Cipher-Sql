@@ -1,0 +1,134 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.attempt-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 75px);
+    padding: 1rem;
+    gap: 1.5rem;
+
+    @include respond-to('laptop') {
+        flex-direction: row;
+        height: calc(100vh - 75px);
+        min-height: auto;
+        padding: 1.5rem;
+    }
+}
+
+.layout-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    &--left {
+        @include respond-to('laptop') {
+            flex: 0 0 32%;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+    }
+
+    &--right {
+        flex: 1;
+
+        @include respond-to('laptop') {
+            height: 100%;
+        }
+    }
+}
+
+.card-box {
+    background-color: var(--surface);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+    &--editor {
+        flex: 1.4;
+        min-height: 350px;
+    }
+
+    &--results {
+        flex: 1;
+        min-height: 250px;
+    }
+
+    &__header {
+        background-color: rgba(0, 0, 0, 0.25);
+        padding: 1rem 1.25rem;
+        font-weight: 600;
+        font-size: 0.95rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 0.8rem;
+    }
+
+    &__content {
+        padding: 1.5rem;
+        overflow-y: auto;
+        flex-grow: 1;
+
+        h3 {
+            font-size: 1.35rem;
+            color: #fff;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+    }
+}
+
+.schema-box {
+    background-color: #080d18;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1.2rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+
+    &__title {
+        color: #e2e8f0;
+        font-weight: 500;
+        margin-bottom: 0.1rem;
+        font-size: 0.95rem;
+    }
+
+    &__divider {
+        color: var(--text-muted);
+        margin-bottom: 0.8rem;
+        letter-spacing: -1px;
+        opacity: 0.5;
+    }
+
+    &__col {
+        display: flex;
+        margin-bottom: 0.4rem;
+
+        .col-name {
+            color: #93c5fd;
+            width: 130px;
+        }
+
+        .col-type {
+            color: #fca5a5;
+        }
+    }
+}

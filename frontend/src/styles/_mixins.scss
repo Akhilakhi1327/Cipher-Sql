@@ -1,0 +1,27 @@
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'mobile' {
+    @media (min-width: 320px) { @content; }
+  }
+  @else if $breakpoint == 'tablet' {
+    @media (min-width: 641px) { @content; }
+  }
+  @else if $breakpoint == 'laptop' {
+    @media (min-width: 1024px) { @content; }
+  }
+  @else if $breakpoint == 'desktop' {
+    @media (min-width: 1281px) { @content; }
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin card-style {
+  background-color: var(--surface);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

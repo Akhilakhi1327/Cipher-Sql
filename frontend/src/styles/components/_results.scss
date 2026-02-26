@@ -1,0 +1,97 @@
+@use "../variables" as *;
+
+.results-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Fira Code', monospace;
+
+  th, td {
+    padding: 0.85rem 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  th {
+    background-color: rgba(0,0,0,0.5);
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:nth-child(even) {
+    background-color: rgba(255,255,255,0.02);
+  }
+
+  tr:hover td {
+    background-color: rgba(255,255,255,0.06);
+  }
+}
+
+.hint-box {
+  background-color: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-left: 4px solid var(--accent);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #e0e7ff;
+  line-height: 1.6;
+
+  &__title {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.05rem;
+  }
+}
+
+.console-msg {
+    &--success {
+        color: var(--success);
+        margin-bottom: 1rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.95rem;
+    }
+    
+    &--error {
+        color: #fca5a5;
+        padding: 1.25rem;
+        background-color: rgba(239, 68, 68, 0.1);
+        border: 1px solid rgba(239, 68, 68, 0.2);
+        border-radius: 8px;
+        font-family: 'Fira Code', monospace;
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    &--empty {
+        color: var(--text-muted);
+        text-align: center;
+        margin-top: 3rem;
+        font-size: 0.95rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        opacity: 0.7;
+    }
+}

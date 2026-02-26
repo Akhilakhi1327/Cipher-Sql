@@ -1,0 +1,55 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "components/button";
+@use "components/assignmentList";
+@use "components/editor";
+@use "components/results";
+
+:root {
+  --primary: #{$primary-color};
+  --bg: #{$background};
+  --surface: #{$surface};
+  --text: #{$text-light};
+  --text-muted: #{$text-muted};
+  --success: #{$success};
+  --error: #{$error};
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-primary;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: var(--surface);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+
+  &__brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+  }
+}

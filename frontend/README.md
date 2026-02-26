@@ -1,0 +1,11 @@
+CipherSQLStudio is a browser-based SQL learning platform where students can practice SQL queries on real datasets and improve their database skills interactively. The main goal of the project is to provide a safe sandbox environment where users can write SQL queries, execute them in real time, and receive intelligent hints without revealing the full solution.
+
+The application is built using the MERN-style architecture with multiple technologies. The frontend is developed using React and Vite, which provides a fast and responsive user interface. For styling, I used pure SCSS with a structured BEM approach and mobile-first design to maintain clean and scalable CSS. I also integrated the Monaco Editor, which is the same editor used in VS Code, to give users a professional coding experience with syntax highlighting and query writing support.
+
+On the backend, I used Node.js and Express to handle API routing, business logic, and database communication. The system uses two databases: MongoDB and PostgreSQL. MongoDB stores flexible assignment data like questions and schemas, while PostgreSQL acts as the real SQL execution sandbox where user queries are executed safely using transactions, ensuring the database cannot be permanently modified.
+
+For the intelligent hint system, I designed a modular LLM integration that can generate guidance without giving full answers. Currently, it can work with OpenAI or a mock rule-based engine, making the system flexible and cost-efficient.
+
+Overall, CipherSQLStudio is a full-stack educational platform that combines real-time SQL execution, safe database sandboxing, and AI-assisted learning to help students practice SQL in an interactive and secure environment.
+
+Due to recent platform policy changes, the OpenAI free trial credits have expired, and the API no longer provides free usage without billing. Because of this, the AI hint generation feature is currently not functioning in live mode. To ensure the application continues to work smoothly for demonstration and academic purposes, a rule-based mock hint system has been integrated as a fallback. This allows the platform to generate basic intelligent hints without relying on the OpenAI API, keeping the system fully functional while avoiding any paid dependency.
